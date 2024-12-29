@@ -14,4 +14,6 @@ public class ShareViewController : ViewModelBase
         _logs.Add(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + ": " + log);
         OnPropertyChanged(nameof(Logs));
     }
+    
+    public string FolderPath { get; set; } = string.Empty;
 }

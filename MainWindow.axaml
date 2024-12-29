@@ -13,25 +13,12 @@
         <vm:MainWindowController/>
     </Design.DataContext>
     
-    
-    <SplitView
-        Name="SView"
-        IsPaneOpen="{Binding IsPaneOpen}"
-        OpenPaneLength="200"
-        CompactPaneLength="30"
-        DisplayMode="CompactOverlay"
-        PanePlacement="Right">
-            <SplitView.Pane>
-                <StackPanel>
-                    <Button HorizontalAlignment="Left" Click="Button_OnClick">&lt;</Button>
-                    <TabControl IsVisible="{Binding IsPaneOpen}" TabStripPlacement="Left">
-                        <TabItem Name="ShareView" Header="Share"></TabItem>
-                        <TabItem Name="SettingsView" Header="Settings"></TabItem>
-                    </TabControl>
-                </StackPanel>
-            </SplitView.Pane>
-            <SplitView.Content>
-                <v:ShareView/>
-            </SplitView.Content>
-        </SplitView>
+    <TabControl>
+        <TabItem Header="Share">
+            <v:ShareView/>
+        </TabItem>
+        <TabItem Header="Settings">
+            
+        </TabItem>
+    </TabControl>
 </Window>

@@ -41,14 +41,17 @@ public partial class ShareView : UserControl
                 return;
             }
 
-            var folderPath = folderPicker[0].Path.LocalPath;
+            _controller.FolderPath = folderPicker[0].Path.LocalPath;
+            
+            // Removing previous files
+            FilesListBox.Items.Clear();
                 
             // We display the current path
-            FolderPathBox.Text = folderPath;
+            FolderPathBox.Text = _controller.FolderPath;
             
-            _controller.AddLog($"Reading folder: {folderPath}");
+            _controller.AddLog($"Reading folder: {_controller.FolderPath}");
             
-            var files = ParseFolder(folderPath);
+            var files = ParseFolder(_controller.FolderPath);
 
             if (files.Length == 0)
             {
